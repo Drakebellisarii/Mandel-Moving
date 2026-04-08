@@ -24,15 +24,6 @@ export const metadata: Metadata = {
     description:
       "Trusted professional movers with thousands of successful relocations. Get your free quote today.",
     type: "website",
-    url: "https://mandelmoving.com",
-    images: [
-      {
-        url: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=630&fit=crop&q=80",
-        width: 1200,
-        height: 630,
-        alt: "Mandel Moving - Professional Moving Services",
-      },
-    ],
   },
 };
 
