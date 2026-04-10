@@ -3,7 +3,8 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import { Menu, X, Truck } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import Image from 'next/image';
 
 const links = [
   { href: '/', label: 'Home' },
@@ -17,19 +18,18 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#0a1628]/95 backdrop-blur-md border-b border-white/10">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#e8edf5]">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-18 py-4">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5 group">
-          <div className="w-9 h-9 rounded-lg bg-[#2a5298] flex items-center justify-center shadow-blue-tint">
-            <Truck className="w-5 h-5 text-white" strokeWidth={1.5} />
-          </div>
-          <span
-            className="text-white font-bold text-lg tracking-tight"
-            style={{ fontFamily: 'var(--font-playfair)' }}
-          >
-            Mandel<span className="text-[#3b6cc9]"> Moving</span>
-          </span>
+          <Image
+            src="/Mandel-Logo.png"
+            alt="Mandel Moving"
+            width={300}
+            height={200}
+            className="h-20 w-auto"
+            priority
+          />
         </Link>
 
         {/* Desktop nav */}
@@ -40,8 +40,8 @@ export default function Navbar() {
               href={href}
               className={`text-sm font-medium tracking-wide transition-opacity duration-200 ${
                 pathname === href
-                  ? 'text-white opacity-100'
-                  : 'text-white/60 hover:text-white hover:opacity-100'
+                  ? 'text-[#0a1628] opacity-100'
+                  : 'text-[#4a6080] hover:text-[#0a1628] hover:opacity-100'
               }`}
             >
               {label}
@@ -62,7 +62,7 @@ export default function Navbar() {
         {/* Mobile hamburger */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden text-white/80 hover:text-white transition-opacity duration-150 p-1"
+          className="md:hidden text-[#0a1628]/70 hover:text-[#0a1628] transition-opacity duration-150 p-1"
           aria-label="Toggle menu"
         >
           {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -71,14 +71,14 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-[#0a1628] border-t border-white/10 px-6 py-6 flex flex-col gap-5">
+        <div className="md:hidden bg-white border-t border-[#e8edf5] px-6 py-6 flex flex-col gap-5">
           {links.map(({ href, label }) => (
             <Link
               key={href}
               href={href}
               onClick={() => setOpen(false)}
               className={`text-base font-medium transition-opacity duration-150 ${
-                pathname === href ? 'text-white' : 'text-white/60 hover:text-white'
+                pathname === href ? 'text-[#0a1628]' : 'text-[#4a6080] hover:text-[#0a1628]'
               }`}
             >
               {label}

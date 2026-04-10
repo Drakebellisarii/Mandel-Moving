@@ -37,8 +37,8 @@ const contactInfo = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'hello@mandelmoving.com',
-    href: 'mailto:hello@mandelmoving.com',
+    value: 'mandelrobby@gmail.com',
+    href: 'mailto:mandelrobby@gmail.com',
   },
 ];
 
@@ -152,7 +152,7 @@ export default function ContactPage() {
                         value={form.phone}
                         onChange={handleChange}
                         required
-                        placeholder="(201) 978-0188"
+                        placeholder="(123) 456-7890"
                         className="border-[#d0d9e8] focus-visible:ring-[#2a5298]/30 focus-visible:border-[#2a5298]"
                       />
                     </div>

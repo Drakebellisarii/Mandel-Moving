@@ -1,25 +1,20 @@
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
 import TestimonialCarousel from '@/components/testimonial-carousel';
-import { Component as EtheralShadow } from '@/components/ui/etheral-shadow';
-import { HeroHighlight, Highlight } from '@/components/ui/hero-highlight';
 import { FadeIn, FadeInGroup, FadeInItem } from '@/components/fade-in';
+import { Waves } from '@/components/ui/wave-background';
 import { StatCounter } from '@/components/stat-counter';
 import Link from 'next/link';
 import Image from 'next/image';
 import {
   ArrowRight,
   Star,
-  CheckCircle2,
-  Package,
   Truck,
-  ClipboardList,
   Home,
   Building2,
   MapPin,
   Shield,
   Award,
-  Phone,
   Heart,
   Wrench,
 } from 'lucide-react';
@@ -41,7 +36,7 @@ const services = [
     icon: Building2,
     title: 'Commercial Moving',
     description:
-      'Minimize downtime with our expert office and commercial relocation services. We work around your schedule to keep business running.',
+      'Minimize downtime with our expert moving and home maintenance services. We work around your schedule to keep business running.',
   },
   {
     icon: MapPin,
@@ -50,22 +45,22 @@ const services = [
       'Professional assembly and disassembly of furniture for your home or office. We handle all the heavy lifting so you can focus on settling in.',
   },
   {
-    icon: Package,
-    title: 'Packing & Unpacking',
-    description:
-      "Professional packing using premium materials. We box, wrap, label, and unpack — so you don't have to lift a finger.",
-  },
-  {
     icon: Shield,
     title: 'Mulching',
     description:
       'High-quality mulching services for landscaping and outdoor spaces. Keep your gardens and yards looking beautiful and well-maintained.',
   },
   {
-    icon: ClipboardList,
-    title: 'Specialty Item Moving',
+    icon: Heart,
+    title: 'Senior Moving',
     description:
-      'Pianos, artwork, antiques, and fragile items handled by specialists with the equipment and expertise to move them safely.',
+      'Patient, compassionate relocations for seniors — from downsizing assistance to full-service moves into assisted-living and retirement communities.',
+  },
+  {
+    icon: Wrench,
+    title: 'Odd Jobs & House Repairs',
+    description:
+      'Hanging shelves, patching drywall, furniture assembly, fixture installation — no task is too small, and no job gets left half-done.',
   },
 ];
 
@@ -109,53 +104,41 @@ export default function HomePage() {
       <Navbar />
 
       {/* ── Hero ── */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-[#0a1628] pt-18">
-        {/* Background image */}
+      <section className="relative min-h-screen flex items-center overflow-hidden pt-18">
+        {/* Full-bleed background image */}
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1800&q=80"
+            src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1800&q=80"
             alt="Professional movers at work"
             fill
-            className="object-cover opacity-25"
+            className="object-cover"
             priority
             unoptimized
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628]/95 via-[#0a1628]/70 to-[#0a1628]/40" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/80 via-transparent to-transparent" />
+          {/* Grey tint overlay */}
+          <div className="absolute inset-0 bg-white/60" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/50 to-white/20" />
         </div>
 
-        {/* Ethereal shadow accent */}
-        <div className="absolute right-0 top-0 w-[600px] h-[600px] opacity-30 pointer-events-none">
-          <EtheralShadow
-            color="rgba(42, 82, 152, 0.8)"
-            animation={{ scale: 60, speed: 30 }}
-            noise={{ opacity: 0.4, scale: 1 }}
-            sizing="fill"
-          />
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-24 lg:py-32">
-          <div className="max-w-3xl">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#2a5298]/40 bg-[#2a5298]/10 mb-8">
-              <Star className="w-3.5 h-3.5 text-[#3b6cc9]" fill="currentColor" />
-              <span className="text-[#7ba3e0] text-xs font-medium tracking-wide">
-                Weehawken Township #1 Moving Company
-              </span>
-            </div>
-
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-24 lg:py-32 w-full">
+          <div className="max-w-2xl">
             <h1
-              className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-[1.08] mb-6"
+              className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#0a1628] leading-[1.08] mb-6"
               style={{ fontFamily: 'var(--font-playfair)', letterSpacing: '-0.03em' }}
             >
-              Where Every Move<br />
-              <span className="text-[#7ba3e0]">Feels Effortless</span>
+              No Job is Too Small<br />
+              <span className="text-[#2a5298]">for Professionals.</span>
             </h1>
 
-            <p className="text-white/60 text-lg leading-relaxed mb-10 max-w-xl">
-              For over two decades, Mandel Moving has delivered trusted, white-glove relocation
+            <p className="text-[#1e3a5f] text-lg leading-relaxed mb-4 max-w-xl">
+              For over five years, Mandel Moving has delivered trusted moving and home maintenance
               services for families and businesses across the region.
             </p>
+
+            <div className="flex items-center gap-2 mb-8">
+              <MapPin className="w-4 h-4 text-[#2a5298] shrink-0" />
+              <span className="text-[#1e3a5f] text-sm font-medium">Serving North Jersey &amp; Southern New York &mdash; Based in Ramsey, NJ</span>
+            </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
@@ -167,44 +150,30 @@ export default function HomePage() {
               </Link>
               <Link
                 href="/services"
-                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl border border-white/20 text-white/80 font-semibold tracking-wide hover:border-white/40 hover:text-white transition-[border-color,opacity] duration-150 text-base"
+                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl border border-[#0a1628]/20 bg-white/40 text-[#0a1628] font-semibold tracking-wide hover:bg-white/60 hover:border-[#0a1628]/30 transition-[background-color,border-color] duration-150 text-base backdrop-blur-sm"
               >
                 View Services
               </Link>
             </div>
-
-            <div className="mt-12 flex items-center gap-6 flex-wrap">
-              {['Licensed & Insured', 'No Hidden Fees', 'Satisfaction Guarantee'].map((item) => (
-                <div key={item} className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#3b6cc9]" />
-                  <span className="text-white/50 text-sm">{item}</span>
-                </div>
-              ))}
-            </div>
           </div>
-        </div>
-
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
-          <div className="w-px h-12 bg-white/40" />
-          <span className="text-white/40 text-xs tracking-widest uppercase">Scroll</span>
         </div>
       </section>
 
       {/* ── Stats Bar ── */}
-      <section className="bg-[#0e1f3d] border-t border-white/10">
+      <section className="bg-white border-t border-b border-[#e8edf5]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12">
-          <FadeInGroup className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-0 sm:divide-x sm:divide-white/10" stagger={0.15}>
+          <FadeInGroup className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-0 sm:divide-x sm:divide-[#e8edf5]" stagger={0.15}>
             {stats.map(({ value, label, icon: Icon }) => (
               <FadeInItem key={label} className="flex items-center justify-center gap-6 px-8">
-                <Icon className="w-6 h-6 text-[#3b6cc9] shrink-0" strokeWidth={1.5} />
+                <Icon className="w-6 h-6 text-[#2a5298] shrink-0" strokeWidth={1.5} />
                 <div className="flex flex-col">
                   <div
-                    className="text-4xl lg:text-5xl font-bold text-white leading-tight"
+                    className="text-4xl lg:text-5xl font-bold text-[#0a1628] leading-tight"
                     style={{ fontFamily: 'var(--font-playfair)' }}
                   >
                     <StatCounter value={value} />
                   </div>
-                  <div className="text-white/40 text-sm font-medium tracking-wide uppercase">
+                  <div className="text-[#4a6080] text-sm font-medium tracking-wide uppercase">
                     {label}
                   </div>
                 </div>
@@ -265,54 +234,65 @@ export default function HomePage() {
       </section>
 
       {/* ── Moving Process ── */}
-      <HeroHighlight containerClassName="h-auto py-24 lg:py-32 bg-[#f6f8fc]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full">
+      <section className="relative py-32 lg:py-44 overflow-hidden bg-[#0a1628]">
+        {/* Wave animation background */}
+        <Waves
+          strokeColor="rgba(91,138,219,0.45)"
+          backgroundColor="transparent"
+          pointerSize={0}
+        />
+        {/* Navy gradient overlay */}
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(160deg, rgba(10,22,40,0.72) 0%, rgba(26,48,85,0.60) 50%, rgba(42,82,152,0.55) 100%)' }} />
+
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           <FadeIn className="text-center max-w-2xl mx-auto mb-16">
-            <p className="text-[#2a5298] text-sm font-semibold uppercase tracking-widest mb-4">
+            <p className="text-[#7ba3e0] text-sm font-semibold uppercase tracking-widest mb-4">
               How It Works
             </p>
             <h2
-              className="text-4xl lg:text-5xl font-bold text-[#0a1628] mb-5"
+              className="text-4xl lg:text-5xl font-bold text-white mb-4"
               style={{ fontFamily: 'var(--font-playfair)', letterSpacing: '-0.025em' }}
             >
-              Our{' '}
-              <Highlight className="text-[#0a1628] dark:text-white">
-                Moving Process
-              </Highlight>
+              Our Moving Process
             </h2>
-            <p className="text-[#4a6080] text-lg leading-relaxed">
-              A clear, five-step journey from quote to keys — designed to take the stress out of
-              every move.
+            <p className="text-white/50 text-base leading-relaxed">
+              A clear, five-step journey from quote to keys — designed to take the stress out of every move.
             </p>
           </FadeIn>
 
-          <div className="relative">
-            <div className="hidden lg:block absolute top-10 left-[calc(10%+2rem)] right-[calc(10%+2rem)] h-px bg-[#d0d9e8]" />
-
-            <FadeInGroup className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8" stagger={0.1}>
-              {process.map(({ step, title, description }) => (
-                <FadeInItem key={step} className="flex flex-col items-center text-center">
-                  <div className="relative w-20 h-20 rounded-2xl bg-[#0a1628] flex items-center justify-center mb-6 shadow-brand z-10">
+          <FadeInGroup className="grid grid-cols-1 md:grid-cols-5 gap-3" stagger={0.1}>
+            {process.map(({ step, title, description }, index) => (
+              <FadeInItem key={step} className="relative flex flex-col">
+                {/* Connector arrow */}
+                {index < process.length - 1 && (
+                  <div className="hidden md:flex absolute top-8 -right-3 z-10 items-center gap-0">
+                    <div className="w-4 h-0.5 bg-white/50" />
+                    <div className="w-0 h-0" style={{ borderTop: '5px solid transparent', borderBottom: '5px solid transparent', borderLeft: '7px solid rgba(255,255,255,0.5)' }} />
+                  </div>
+                )}
+                <div className="flex-1 bg-white rounded-2xl p-6 shadow-brand border border-[#e8edf5] hover:border-[#2a5298]/20 hover:shadow-[0_4px_24px_rgba(42,82,152,0.1)] transition-[border-color,box-shadow] duration-300">
+                  {/* Step number pill */}
+                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-[#2a5298] mb-5">
                     <span
-                      className="text-2xl font-bold text-white/90"
+                      className="text-sm font-bold text-white"
                       style={{ fontFamily: 'var(--font-playfair)' }}
                     >
                       {step}
                     </span>
                   </div>
                   <h3
-                    className="text-base font-bold text-[#0a1628] mb-2"
+                    className="text-[#0a1628] font-bold text-sm mb-2"
                     style={{ fontFamily: 'var(--font-playfair)' }}
                   >
                     {title}
                   </h3>
-                  <p className="text-[#4a6080] text-sm leading-relaxed">{description}</p>
-                </FadeInItem>
-              ))}
-            </FadeInGroup>
-          </div>
+                  <p className="text-[#4a6080] text-xs leading-relaxed">{description}</p>
+                </div>
+              </FadeInItem>
+            ))}
+          </FadeInGroup>
         </div>
-      </HeroHighlight>
+      </section>
 
       {/* ── Testimonials ── */}
       <section className="bg-white py-24 lg:py-32">
@@ -331,62 +311,6 @@ export default function HomePage() {
 
           <TestimonialCarousel />
         </div>
-      </section>
-
-      {/* ── CTA Banner ── */}
-      <section className="relative bg-[#f6f8fc] py-14 overflow-hidden border-t border-[#e8edf5]">
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute -top-40 right-0 w-[500px] h-[400px] rounded-full bg-[#2a5298]/5 blur-3xl" />
-        </div>
-
-        <FadeIn className="relative max-w-6xl mx-auto px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
-            {/* Left: text */}
-            <div className="flex-1 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#2a5298]/10 mb-4">
-                <Truck className="w-3.5 h-3.5 text-[#2a5298]" strokeWidth={1.5} />
-                <span className="text-[#2a5298] text-xs font-semibold uppercase tracking-widest">Free Estimates</span>
-              </div>
-              <h2
-                className="text-3xl lg:text-4xl font-bold text-[#0a1628] mb-3"
-                style={{ fontFamily: 'var(--font-playfair)', letterSpacing: '-0.025em' }}
-              >
-                Ready to Make Your Move?
-              </h2>
-              <p className="text-[#4a6080] text-base leading-relaxed max-w-md mx-auto lg:mx-0">
-                Get a free, no-obligation quote today. Our team responds within 24 hours.
-              </p>
-            </div>
-
-            {/* Right: actions + trust */}
-            <div className="flex flex-col items-center lg:items-end gap-4 shrink-0">
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-[#2a5298] text-white font-semibold tracking-wide hover:bg-[#3b6cc9] active:scale-[0.98] transition-[transform,background-color] duration-150 shadow-blue-tint text-sm"
-                >
-                  Get a Free Quote
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-                <a
-                  href="tel:+12019780188"
-                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl border border-[#d0d9e8] bg-white text-[#0a1628] font-semibold tracking-wide hover:border-[#2a5298]/40 hover:text-[#2a5298] transition-[border-color,color] duration-150 text-sm"
-                >
-                  <Phone className="w-4 h-4" />
-                  (201) 978-0188
-                </a>
-              </div>
-              <div className="flex flex-wrap items-center justify-center lg:justify-end gap-x-5 gap-y-2">
-                {['Licensed & Insured', 'No Hidden Fees', 'Satisfaction Guarantee'].map((item) => (
-                  <div key={item} className="flex items-center gap-1.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#3b6cc9]" />
-                    <span className="text-[#4a6080] text-xs font-medium">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </FadeIn>
       </section>
 
       <Footer />

@@ -1,25 +1,24 @@
 import Link from 'next/link';
-import { Truck, Phone, Mail, Share2, MessageCircle, Briefcase } from 'lucide-react';
+import Image from 'next/image';
+import { Phone, Mail, Share2, MessageCircle, Briefcase } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0a1628] text-white">
+    <footer className="bg-[#f0f4ff] border-t border-[#d0d9e8] text-[#0a1628]">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand column */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-2.5 mb-5">
-              <div className="w-9 h-9 rounded-lg bg-[#2a5298] flex items-center justify-center">
-                <Truck className="w-5 h-5 text-white" strokeWidth={1.5} />
-              </div>
-              <span
-                className="text-white font-bold text-lg tracking-tight"
-                style={{ fontFamily: 'var(--font-playfair)' }}
-              >
-                Mandel Moving
-              </span>
+            <Link href="/" className="flex items-center mb-5">
+              <Image
+                src="/Mandel-Logo.png"
+                alt="Mandel Moving"
+                width={160}
+                height={64}
+                className="h-20 w-auto"
+              />
             </Link>
-            <p className="text-white/50 text-sm leading-relaxed mb-6">
+            <p className="text-[#4a6080] text-sm leading-relaxed mb-6">
               Your trusted partner for seamless residential and commercial relocations. Started in 2021 by Robby Mandell with a commitment to excellence and care.
             </p>
             <div className="flex gap-3">
@@ -27,7 +26,7 @@ export default function Footer() {
                 <a
                   key={i}
                   href="#"
-                  className="w-9 h-9 rounded-lg border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-white/30 transition-[opacity,border-color] duration-150"
+                  className="w-9 h-9 rounded-lg border border-[#c0cde0] flex items-center justify-center text-[#4a6080] hover:text-[#2a5298] hover:border-[#2a5298]/40 transition-[color,border-color] duration-150"
                 >
                   <Icon className="w-4 h-4" />
                 </a>
@@ -37,7 +36,7 @@ export default function Footer() {
 
           {/* Quick links */}
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-widest text-white/40 mb-5">
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-[#4a6080] mb-5">
               Company
             </h4>
             <ul className="space-y-3">
@@ -50,7 +49,7 @@ export default function Footer() {
                 <li key={label}>
                   <Link
                     href={href}
-                    className="text-white/50 hover:text-white text-sm transition-opacity duration-150"
+                    className="text-[#4a6080] hover:text-[#2a5298] text-sm transition-[color] duration-150"
                   >
                     {label}
                   </Link>
@@ -61,7 +60,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-widest text-white/40 mb-5">
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-[#4a6080] mb-5">
               Services
             </h4>
             <ul className="space-y-3">
@@ -69,16 +68,14 @@ export default function Footer() {
                 'Residential Moving',
                 'Commercial Moving',
                 'Furniture Assembly and Disassembly',
-                'Packing & Unpacking',
                 'Mulching',
-                'Specialty Item Moving',
                 'Senior Moving',
                 'Odd Jobs & House Repairs',
               ].map((s) => (
                 <li key={s}>
                   <Link
                     href="/services"
-                    className="text-white/50 hover:text-white text-sm transition-opacity duration-150"
+                    className="text-[#4a6080] hover:text-[#2a5298] text-sm transition-[color] duration-150"
                   >
                     {s}
                   </Link>
@@ -89,34 +86,34 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-widest text-white/40 mb-5">
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-[#4a6080] mb-5">
               Contact
             </h4>
             <ul className="space-y-4">
               <li className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-[#3b6cc9] shrink-0" />
+                <Phone className="w-4 h-4 text-[#2a5298] shrink-0" />
                 <a
                   href="tel:+12019780188"
-                  className="text-white/50 hover:text-white text-sm transition-opacity duration-150"
+                  className="text-[#4a6080] hover:text-[#2a5298] text-sm transition-[color] duration-150"
                 >
                   (201) 978-0188
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-[#3b6cc9] shrink-0" />
+                <Mail className="w-4 h-4 text-[#2a5298] shrink-0" />
                 <a
-                  href="mailto:hello@mandelmoving.com"
-                  className="text-white/50 hover:text-white text-sm transition-opacity duration-150"
+                  href="mailto:mandelrobby@gmail.com"
+                  className="text-[#4a6080] hover:text-[#2a5298] text-sm transition-[color] duration-150"
                 >
-                  hello@mandelmoving.com
+                  mandelrobby@gmail.com
                 </a>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-14 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-white/30 text-sm">
+        <div className="mt-14 pt-8 border-t border-[#c0cde0] flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-[#4a6080]/70 text-sm">
             © {new Date().getFullYear()} Mandel Moving. All rights reserved.
           </p>
           <div className="flex gap-6">
@@ -124,7 +121,7 @@ export default function Footer() {
               <a
                 key={item}
                 href="#"
-                className="text-white/30 hover:text-white/60 text-sm transition-opacity duration-150"
+                className="text-[#4a6080]/70 hover:text-[#2a5298] text-sm transition-[color] duration-150"
               >
                 {item}
               </a>

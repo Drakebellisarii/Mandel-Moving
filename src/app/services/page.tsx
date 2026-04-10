@@ -7,14 +7,13 @@ import {
   ArrowRight,
   Home,
   Building2,
-  MapPin,
-  Package,
+  Wrench,
   Shield,
-  ClipboardList,
   CheckCircle2,
   Phone,
   Heart,
-  Wrench,
+  Hammer,
+  Wind,
 } from 'lucide-react';
 
 const services = [
@@ -25,7 +24,7 @@ const services = [
     subtitle: 'Home Sweet New Home',
     description:
       "Moving your household is one of life's biggest transitions. Our residential moving team handles everything from careful packing to precise placement in your new home — treating your belongings with the respect they deserve.",
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=80',
+    image: 'https://images.unsplash.com/photo-1567496898669-ee935f5f647a?w=900&q=80',
     features: [
       'Full-service packing and unpacking',
       'Furniture disassembly and reassembly',
@@ -54,36 +53,19 @@ const services = [
   },
   {
     id: 'furniture-assembly',
-    icon: MapPin,
+    icon: Wrench,
     title: 'Furniture Assembly and Disassembly',
     subtitle: 'Expert Assembly for Your New Space',
     description:
       'Whether you are setting up a new home or office, our furniture assembly and disassembly service handles all your furniture needs with precision and care — ensuring everything is properly assembled and ready to use.',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80',
+    image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=900&q=80',
     features: [
       'Full furniture assembly from flat-pack items',
       'Careful disassembly for moves and storage',
       'Furniture moving and repositioning',
       'Professional-grade tools and expertise',
       'Quick turnaround on assembly requests',
-      'Nationwide service coverage',
-    ],
-  },
-  {
-    id: 'packing',
-    icon: Package,
-    title: 'Packing & Unpacking',
-    subtitle: 'Not a Single Box to Lift',
-    description:
-      "Our professional packers arrive with premium materials and a systematic approach. Every item is catalogued, wrapped, and boxed for maximum protection. When we arrive at your new location, we'll unpack and set everything up exactly as you want it.",
-    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=900&q=80',
-    features: [
-      'Full or partial packing options',
-      'Premium double-wall moving boxes',
-      'Dish pack and glass cells for fragile items',
-      'Detailed labeling and room mapping',
-      'Unpacking and debris removal',
-      'Artwork and mirror crating',
+      'Residential and commercial coverage',
     ],
   },
   {
@@ -104,30 +86,13 @@ const services = [
     ],
   },
   {
-    id: 'specialty',
-    icon: ClipboardList,
-    title: 'Specialty Item Moving',
-    subtitle: 'For Items That Need Extra Care',
-    description:
-      'Pianos, safes, antiques, fine art, and grandfather clocks require expertise beyond standard moving. Our specialty team has the equipment, training, and experience to move your most prized possessions safely.',
-    image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=900&q=80',
-    features: [
-      'Grand and upright piano moving',
-      'Safe and vault relocation',
-      'Fine art crating and transport',
-      'Antique furniture specialists',
-      'Hot tub and pool table moving',
-      'Custom crating available',
-    ],
-  },
-  {
     id: 'senior-moving',
     icon: Heart,
     title: 'Senior Moving',
     subtitle: 'Compassionate Care for Every Step',
     description:
       'Moving later in life deserves a team that leads with patience and compassion. Our senior moving specialists are trained to provide calm, unhurried, and fully managed relocations — from downsizing assistance to seamless transition-home setups.',
-    image: 'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=900&q=80',
+    image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=900&q=80',
     features: [
       'Unhurried, patient-centered scheduling',
       'Downsizing and decluttering guidance',
@@ -144,7 +109,7 @@ const services = [
     subtitle: 'One Call for All the Small Stuff',
     description:
       'From hanging shelves and patching drywall to assembling furniture and fixing leaky faucets — our skilled handymen tackle the jobs that pile up. No task is too small, and no job gets left half-done.',
-    image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=900&q=80',
+    image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=900&q=80',
     features: [
       'Furniture assembly and wall mounting',
       'Drywall patching and painting touch-ups',
@@ -154,8 +119,43 @@ const services = [
       'Seasonal home maintenance checks',
     ],
   },
+  {
+    id: 'window-cleaning',
+    icon: Wind,
+    title: 'Window Cleaning',
+    subtitle: 'Crystal Clear Results',
+    description:
+      'Professional interior and exterior window cleaning for homes and businesses. We leave every pane streak-free and spotless, improving your view and your property\'s curb appeal.',
+    image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=900&q=80',
+    features: [
+      'Interior and exterior window cleaning',
+      'Screen removal and cleaning',
+      'Track and sill detailing',
+      'Multi-story residential service',
+      'Commercial storefront cleaning',
+      'Eco-friendly cleaning solutions',
+    ],
+  },
+  {
+    id: 'wood-refinishing',
+    icon: Hammer,
+    title: 'Refinish Wooden Furniture & Decks',
+    subtitle: 'Restore the Natural Beauty',
+    description:
+      'Bring worn-out wood back to life. We sand, stain, and seal wooden furniture, floors, and outdoor decks — restoring their original beauty and protecting them for years to come.',
+    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=80',
+    features: [
+      'Deck sanding, staining, and sealing',
+      'Wooden furniture restoration',
+      'Custom stain color matching',
+      'Interior hardwood refinishing',
+      'Weatherproofing and UV protection',
+      'Residential and commercial projects',
+    ],
+  },
 ];
 
+const serviceNames = services.map(s => s.title);
 
 export default function ServicesPage() {
   return (
@@ -163,40 +163,50 @@ export default function ServicesPage() {
       <Navbar />
 
       {/* ── Hero ── */}
-      <section className="relative bg-[#0a1628] pt-32 pb-24 overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1800&q=80"
-            alt="Professional movers"
-            fill
-            className="object-cover opacity-15"
-            unoptimized
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0a1628]/80 to-[#0a1628]" />
-        </div>
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <p className="text-[#7ba3e0] text-sm font-semibold uppercase tracking-widest mb-4">
-            Our Services
-          </p>
-          <h1
-            className="text-5xl lg:text-6xl font-bold text-white mb-6"
-            style={{ fontFamily: 'var(--font-playfair)', letterSpacing: '-0.03em' }}
-          >
-            Every Move. Every<br />
-            <span className="text-[#7ba3e0]">Type of Need.</span>
-          </h1>
-          <p className="text-white/60 text-lg leading-relaxed max-w-2xl mx-auto mb-10">
-            From studio apartments to corporate headquarters, we offer a complete suite of
-            moving and relocation services tailored to your exact situation.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 px-7 py-4 rounded-xl bg-[#2a5298] text-white font-semibold hover:bg-[#3b6cc9] active:scale-[0.98] transition-[transform,background-color] duration-150 text-base"
-          >
-            Get a Free Quote
-            <ArrowRight className="w-4 h-4" />
-          </Link>
+      <section className="relative overflow-hidden pt-20" style={{ background: 'linear-gradient(135deg, #0d1f3c 0%, #1a3358 50%, #1e3f6b 100%)' }}>
+        {/* Diagonal stripe texture */}
+        <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{
+          backgroundImage: 'repeating-linear-gradient(45deg, #ffffff 0px, #ffffff 1px, transparent 1px, transparent 32px)',
+        }} />
+        {/* Glow accents */}
+        <div className="absolute top-0 right-0 w-[500px] h-[400px] pointer-events-none" style={{ background: 'radial-gradient(ellipse at top right, rgba(91,138,219,0.2) 0%, transparent 70%)' }} />
+
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-8 pt-16 pb-12">
+          {/* Header text */}
+          <div className="text-center mb-12">
+            <p className="text-[#7ba3e0] text-sm font-semibold uppercase tracking-widest mb-4">
+              Our Services
+            </p>
+            <h1
+              className="text-5xl lg:text-6xl font-bold text-white mb-5"
+              style={{ fontFamily: 'var(--font-playfair)', letterSpacing: '-0.03em' }}
+            >
+              Every Move. Every<br />
+              <span className="text-[#7ba3e0]">Type of Need.</span>
+            </h1>
+            <p className="text-white/50 text-lg leading-relaxed max-w-2xl mx-auto mb-8">
+              From studio apartments to corporate headquarters — moving, maintenance, and home services all under one roof.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#2a5298] text-white font-semibold hover:bg-[#3b6cc9] active:scale-[0.98] transition-[transform,background-color] duration-150 text-sm"
+            >
+              Get a Free Quote
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+          {/* Service name pills */}
+          <div className="flex flex-wrap justify-center gap-2 pb-12">
+            {serviceNames.map((name) => (
+              <span
+                key={name}
+                className="px-4 py-1.5 rounded-full bg-white/8 border border-white/15 text-white/70 text-xs font-medium tracking-wide"
+              >
+                {name}
+              </span>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -213,7 +223,6 @@ export default function ServicesPage() {
                   index % 2 === 1 ? 'lg:flex-row-reverse' : ''
                 }`}
               >
-                {/* Text — swap order for even items on desktop */}
                 <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
                   <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0a1628]/5 mb-5">
                     <Icon className="w-4 h-4 text-[#2a5298]" strokeWidth={1.5} />
@@ -240,14 +249,13 @@ export default function ServicesPage() {
 
                   <Link
                     href="/contact"
-                    className="inline-flex items-center gap-2 text-[#2a5298] font-semibold hover:text-[#1e3a5f] transition-[opacity] duration-150"
+                    className="inline-flex items-center gap-2 text-[#2a5298] font-semibold hover:text-[#1e3a5f] transition-[color] duration-150"
                   >
                     Request this service
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
 
-                {/* Image */}
                 <div className={`relative rounded-2xl overflow-hidden shadow-brand-lg aspect-[4/3] ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
                   <Image
                     src={image}
@@ -266,31 +274,27 @@ export default function ServicesPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="bg-[#0a1628] py-20">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <h2
-            className="text-3xl lg:text-4xl font-bold text-white mb-4"
-            style={{ fontFamily: 'var(--font-playfair)', letterSpacing: '-0.025em' }}
-          >
-            Not Sure Which Service You Need?
-          </h2>
-          <p className="text-white/60 text-lg mb-10 max-w-lg mx-auto">
-            Our move coordinators are happy to walk you through the best option for your
-            situation. Call or fill out our form — no pressure, no obligation.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+      <section className="bg-[#0a1628] py-10 border-t border-white/10">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div>
+            <p className="text-white font-bold text-lg" style={{ fontFamily: 'var(--font-playfair)' }}>
+              Not Sure Which Service You Need?
+            </p>
+            <p className="text-white/50 text-sm mt-0.5">No pressure — we'll help you figure it out.</p>
+          </div>
+          <div className="flex gap-3 shrink-0">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#2a5298] text-white font-semibold hover:bg-[#3b6cc9] active:scale-[0.98] transition-[transform,background-color] duration-150"
+              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-[#2a5298] text-white font-semibold text-sm hover:bg-[#3b6cc9] active:scale-[0.98] transition-[transform,background-color] duration-150"
             >
-              Contact Us for a Free Quote
-              <ArrowRight className="w-4 h-4" />
+              Get a Free Quote
+              <ArrowRight className="w-3.5 h-3.5" />
             </Link>
             <a
               href="tel:+12019780188"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border border-white/20 text-white/80 font-semibold hover:border-white/40 hover:text-white transition-[border-color,opacity] duration-150"
+              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg border border-white/20 text-white/80 font-semibold text-sm hover:border-white/40 hover:text-white transition-[border-color,color] duration-150"
             >
-              <Phone className="w-4 h-4" />
+              <Phone className="w-3.5 h-3.5" />
               (201) 978-0188
             </a>
           </div>
