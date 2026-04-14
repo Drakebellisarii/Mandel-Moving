@@ -24,7 +24,7 @@ const services = [
     subtitle: 'Home Sweet New Home',
     description:
       "Moving your household is one of life's biggest transitions. Our residential moving team handles everything from careful packing to precise placement in your new home — treating your belongings with the respect they deserve.",
-    image: 'https://images.unsplash.com/photo-1567496898669-ee935f5f647a?w=900&q=80',
+    image: 'house.jpg',
     features: [
       'Full-service packing and unpacking',
       'Furniture disassembly and reassembly',
@@ -41,7 +41,7 @@ const services = [
     subtitle: 'Zero Downtime. Maximum Efficiency.',
     description:
       "Business relocations require precision planning and after-hours execution. Our commercial division handles office furniture, IT equipment, and sensitive documents with the discretion and speed your business demands.",
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=900&q=80',
+    image: 'commercial.jpg',
     features: [
       'After-hours and weekend scheduling',
       'IT equipment packing and transport',
@@ -58,7 +58,7 @@ const services = [
     subtitle: 'Expert Assembly for Your New Space',
     description:
       'Whether you are setting up a new home or office, our furniture assembly and disassembly service handles all your furniture needs with precision and care — ensuring everything is properly assembled and ready to use.',
-    image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=900&q=80',
+    image: 'furniture.png',
     features: [
       'Full furniture assembly from flat-pack items',
       'Careful disassembly for moves and storage',
@@ -75,7 +75,7 @@ const services = [
     subtitle: 'Transform Your Outdoor Spaces',
     description:
       'Professional mulching services for residential and commercial properties. Our expert team delivers and installs premium mulch to enhance your landscaping while protecting soil and suppressing weeds.',
-    image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=900&q=80',
+    image: 'mulch.jpg',
     features: [
       'Premium mulch selection and delivery',
       'Professional installation and spreading',
@@ -92,7 +92,7 @@ const services = [
     subtitle: 'Compassionate Care for Every Step',
     description:
       'Moving later in life deserves a team that leads with patience and compassion. Our senior moving specialists are trained to provide calm, unhurried, and fully managed relocations — from downsizing assistance to seamless transition-home setups.',
-    image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=900&q=80',
+    image: 'old.jpg',
     features: [
       'Unhurried, patient-centered scheduling',
       'Downsizing and decluttering guidance',
@@ -109,7 +109,7 @@ const services = [
     subtitle: 'One Call for All the Small Stuff',
     description:
       'From hanging shelves and patching drywall to assembling furniture and fixing leaky faucets — our skilled handymen tackle the jobs that pile up. No task is too small, and no job gets left half-done.',
-    image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=900&q=80',
+    image: 'odd-jobs.jpg',
     features: [
       'Furniture assembly and wall mounting',
       'Drywall patching and painting touch-ups',
@@ -126,7 +126,7 @@ const services = [
     subtitle: 'Crystal Clear Results',
     description:
       'Professional interior and exterior window cleaning for homes and businesses. We leave every pane streak-free and spotless, improving your view and your property\'s curb appeal.',
-    image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=900&q=80',
+    image: 'windows.jpg',
     features: [
       'Interior and exterior window cleaning',
       'Screen removal and cleaning',
@@ -143,7 +143,7 @@ const services = [
     subtitle: 'Restore the Natural Beauty',
     description:
       'Bring worn-out wood back to life. We sand, stain, and seal wooden furniture, floors, and outdoor decks — restoring their original beauty and protecting them for years to come.',
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=80',
+    image: 'restoration.jpeg',
     features: [
       'Deck sanding, staining, and sealing',
       'Wooden furniture restoration',
@@ -256,12 +256,13 @@ export default function ServicesPage() {
                   </Link>
                 </div>
 
-                <div className={`relative rounded-2xl overflow-hidden shadow-brand-lg aspect-[4/3] ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+                <div className={`relative rounded-2xl overflow-hidden shadow-brand-lg ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
                   <Image
                     src={image}
                     alt={title}
-                    fill
-                    className="object-cover"
+                    width={900}
+                    height={600}
+                    style={{ width: '100%', height: 'auto' }}
                     unoptimized
                     priority
                   />

@@ -108,8 +108,8 @@ export default function HomePage() {
         {/* Full-bleed background image */}
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1800&q=80"
-            alt="Professional movers at work"
+            src="moving-hero.jpg"
+            alt="Professional movers loading boxes into a moving truck"
             fill
             className="object-cover"
             priority
@@ -310,6 +310,27 @@ export default function HomePage() {
           </FadeIn>
 
           <TestimonialCarousel />
+
+          <div className="mt-12 rounded-2xl bg-gray-50 border border-gray-200 px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-4">
+              <div className="flex gap-0.5">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} className="w-4 h-4 text-[#2a5298]" fill="currentColor" />
+                ))}
+              </div>
+              <div className="text-left">
+                <p className="text-sm font-semibold text-[#0a1628]">Loved your experience?</p>
+                <p className="text-xs text-[#4a6080]">Your review helps families find a mover they can trust.</p>
+              </div>
+            </div>
+            <Link
+              href="/review"
+              className="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#2a5298] text-white font-semibold text-sm hover:bg-[#3b6cc9] active:scale-[0.98] transition-[transform,background-color] duration-150"
+            >
+              Write a Review
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
         </div>
       </section>
 

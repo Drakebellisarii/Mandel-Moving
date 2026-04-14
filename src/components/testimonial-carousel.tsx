@@ -7,42 +7,42 @@ import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 const testimonials = [
   {
     name: "Sarah L.",
-    location: "Hoboken, NJ",
+    location: "Mahwah, NJ",
     text: "Mandel Moving made what I dreaded the most completely painless. The crew was professional, fast, and handled my furniture like it was their own. Worth every dollar.",
   },
   {
     name: "Michael R.",
-    location: "Jersey City, NJ",
+    location: "Ramsey, NJ",
     text: "I've used three different movers over the years — none came close to this. On time, zero damage, and genuinely kind people. Mandel is the only call I'll make from now on.",
   },
   {
     name: "Priya K.",
-    location: "Brooklyn, NY",
+    location: "Allendale, NJ",
     text: "I've moved four times in the last decade and this was by far the best experience. Organized, respectful, and they treated every item like it mattered.",
   },
   {
     name: "Daniel M.",
-    location: "Weehawken, NJ",
+    location: "Waldwick, NJ",
     text: "Booked them last minute and they still showed up prepared and professional. Packed my entire apartment in under two hours. Absolutely incredible team.",
   },
   {
     name: "Tanya W.",
-    location: "Astoria, Queens, NY",
+    location: "Clarkstown, NY",
     text: "From the first call to the last box, everything was smooth and stress-free. They even helped me reassemble my furniture at the new place. Five stars without question.",
   },
   {
     name: "James F.",
-    location: "Montclair, NJ",
+    location: "Oakland, NJ",
     text: "Our office relocation was done over a weekend with zero disruption to the business. The crew was efficient, careful, and left the new space exactly how we wanted it.",
   },
   {
     name: "Alicia B.",
-    location: "Upper West Side, NY",
+    location: "Ramapo, NY",
     text: "I was nervous about moving my antiques and piano — Robby's team handled them with such care. Everything arrived in perfect condition. I can't recommend them enough.",
   },
   {
     name: "Kevin T.",
-    location: "Fort Lee, NJ",
+    location: "Franklin Lakes, NJ",
     text: "Honest pricing, no surprise fees, and a crew that actually cares. My move was done faster than quoted and nothing was scratched. A+ from start to finish.",
   },
 ];

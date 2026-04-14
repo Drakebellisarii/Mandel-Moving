@@ -45,6 +45,7 @@ export default function Footer() {
                 { href: '/services', label: 'Our Services' },
                 { href: '/contact', label: 'Contact' },
                 { href: '/contact', label: 'Get a Free Quote' },
+                { href: '/review', label: 'Write a Review' },
               ].map(({ href, label }) => (
                 <li key={label}>
                   <Link

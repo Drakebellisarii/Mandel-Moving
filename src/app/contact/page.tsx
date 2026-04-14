@@ -44,6 +44,8 @@ const contactInfo = [
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -58,9 +60,23 @@ export default function ContactPage() {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError('');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error();
+      setSubmitted(true);
+    } catch {
+      setError('Something went wrong. Please try again or call us directly.');
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -209,11 +225,16 @@ export default function ContactPage() {
 
                   <Button
                     type="submit"
-                    className="w-full bg-[#0a1628] hover:bg-[#1e3a5f] text-white font-semibold py-3 h-auto rounded-xl active:scale-[0.98] transition-[transform,background-color] duration-150 cursor-pointer"
+                    disabled={loading}
+                    className="w-full bg-[#0a1628] hover:bg-[#1e3a5f] text-white font-semibold py-3 h-auto rounded-xl active:scale-[0.98] transition-[transform,background-color] duration-150 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    Submit Request — Get My Free Quote
-                    <ArrowRight className="w-4 h-4 ml-2" />
+                    {loading ? 'Sending…' : 'Submit Request — Get My Free Quote'}
+                    {!loading && <ArrowRight className="w-4 h-4 ml-2" />}
                   </Button>
+
+                  {error && (
+                    <p className="text-center text-red-500 text-xs mt-3">{error}</p>
+                  )}
 
                   <p className="text-center text-[#7a90aa] text-xs mt-4">
                     We typically respond within 24 hours. No commitment required.

@@ -9,7 +9,7 @@ const stats = [
   { value: '250', label: 'Successful Moves', icon: Truck },
   { value: '5', label: 'Years in Service', icon: Award },
   { value: '40', label: '5-Star Reviews', icon: Star },
-  { value: '20', label: 'Team Members', icon: Users },
+  { value: '5', label: 'Team Members', icon: Users },
 ];
 
 export default function AboutPage() {
@@ -88,18 +88,14 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-5 text-[#4a6080] text-base leading-relaxed">
                 <p>
-                  Mandel Moving was founded in 2021 by Robby Mandel, who set out to do
-                  things differently for his community, one move at a time.
+                 What started as Robby, a pickup truck, and a buddy has grown into something much bigger. In the early days, it was all about putting in the hours, helping people out, and building trust one job at a time.
+
                 </p>
                 <p>
-                  Starting with a single truck and three employees, Robby built the company on a
-                  foundation of radical transparency, genuine care, and relentless attention to
-                  detail. Word spread. Clients became advocates. The company grew.
+                  Now, we’re a team of five with years of experience and thousands of happy customers behind us. Even as we’ve grown, we’ve never lost sight of what got us here: showing up, working hard, and making sure every customer is taken care of. We believe in doing honest work and standing behind everything we do.
                 </p>
                 <p>
-                  Today, Mandel Moving employs over 20 dedicated professionals and operates a
-                  modern fleet of GPS-tracked vehicles. We serve thousands of families and
-                  businesses each year, but our values have never changed.
+                  Whether it’s your first time working with us or you’ve been with us for years, you can count on the same level of dedication and care every time.
                 </p>
               </div>
             </FadeIn>
@@ -107,7 +103,7 @@ export default function AboutPage() {
             <FadeIn direction="right">
               <div className="relative rounded-2xl overflow-hidden shadow-brand-lg aspect-[4/3]">
                 <Image
-                  src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=900&q=80"
+                  src="house2.jpg"
                   alt="Average suburban home"
                   fill
                   className="object-cover"
